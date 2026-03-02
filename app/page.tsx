@@ -46,7 +46,7 @@ export default function Home() {
         </section>
 
         {/* About Me */}
-        <section id="about" className="py-20">
+        <section id="about" className="py-20 lg:py-32">
           <div className="items-center">
             <div className="space-y-4">
               <h6 className="text-3xl text-zinc-700 leading-relaxed font-[raleway]">
@@ -65,16 +65,15 @@ export default function Home() {
           </div>
         </section>
 
-        {/* <section id="projects" className="py-20">
+        <section id="projects" className="py-20 lg:py-32">
           <div className="grid lg:grid-cols-1 gap-12 items-center">
-            <div className="space-y-6">
-              <h3 className="text-4xl font-medium text-zinc-900 tracking-tight">Gallery</h3>
+            <div className="space-y-4">
               <h6 className="text-3xl text-zinc-700 leading-relaxed font-[raleway]">
-                A picture is worth thousand words.
+                <span className='font-[merriweather]'>Stress</span> makes me feel <i className='font-medium'>alive</i>
               </h6>
             </div>
             </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* <div className="grid md:grid-cols-3 gap-8">
             {[
               { title: "Project One", desc: "A full-stack app built with Next.js, Prisma, and Tailwind. Features auth, real-time updates, and clean UI." },
               { title: "Project Two", desc: "Interactive dashboard using React, Chart.js, and Supabase. Focused on data visualization and UX." },
@@ -95,8 +94,8 @@ export default function Home() {
                 </CardFooter>
               </Card>
             ))}
-          </div>
-        </section> */}
+          </div> */}
+        </section>
 
       </main>
 
