@@ -5,46 +5,37 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { ArrowRight } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-50 to-white font-sans antialiased">
-      <header className="sticky top-0 z-10 border-b bg-white/80 backdrop-blur-sm">
-        <nav className="mx-auto max-w-5xl px-6 py-4 flex items-center justify-between">
-          <h1 className="text-xl font-semibold text-zinc-900">
-            Danny
-          </h1>
-          <ul className="flex gap-8 text-sm font-medium text-zinc-700">
-            <li><Link href="#about" className="hover:text-zinc-900 transition">About</Link></li>
-            <li><Link href="#projects" className="hover:text-zinc-900 transition">Projects</Link></li>
-            <li><Link href="#resume" className="hover:text-zinc-900 transition">Resume</Link></li>
-            <li><Link href="#contact" className="hover:text-zinc-900 transition">Contact</Link></li>
-          </ul>
-        </nav>
-      </header>
-
+    <div className="min-h-screen antialiased">
       <main className="mx-auto max-w-5xl px-6">
-        <section className="py-20 md:py-32 flex flex-col md:flex-row items-center gap-12 md:gap-16">
-          <div className="flex-1 space-y-6 text-center md:text-left">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-zinc-900">
-              Hello! I'm Danny
-            </h2>
-            <p className="text-xl md:text-2xl text-zinc-700" style={{ fontFamily: 'Merriweather, serif' }}>
-              Aspiring Full-Stack Developer
+        <section className="py-20 lg:py-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="flex-1 space-y-7 lg:space-y-6 text-center lg:text-left">
+            <h1 className="text-4xl text-5xl lg:text-6xl tracking-tight text-zinc-900">
+              Hello! My <span className="font-light font-[merriweather] lg:italic non-italic">name is </span> <span className="font-medium">Danny</span>.
+            </h1>
+            <p className="text-lg lg:text-xl text-zinc-800 font-[raleway] max-w-xl mx-auto lg:mx-0">
+              I am a current <b>junior</b> in high school, attending <i>Pembroke Pines Charter High School.</i> With my <b>fervent</b> love for code, I build <u className='decoration-wavy'>clean</u>, <u>performant</u> <b>experiences</b> with modern tools like <i className='font-[merriweather] font-light'>Next.js, TypeScript, and Tailwind.</i>
             </p>
-            <p className="text-lg text-zinc-600 max-w-xl mx-auto md:mx-0">
-              Welcome to my portfolio! I love building clean, performant web experiences with modern tools like Next.js, TypeScript, and Tailwind.
-            </p>
-            <div className="pt-4">
-              <Button asChild variant="default" size="lg" className="shadow-md">
-                <Link href="#projects">View My Work</Link>
+            <div className="pt-2 lg:pt-5">
+              <Button
+                variant="default"
+                className="group text-lg h-[42] transition ease-in-out duration-500 hover:cursor-pointer"
+              >
+                All case studies{" "}
+                <ArrowRight
+                  style={{ width: "1.5rem", height: "1.5rem" }}
+                  className="transition-transform duration-1000 ease-in-out transform group-hover:rotate-[360deg]"
+                />
               </Button>
             </div>
           </div>
 
-          <div className="flex-1 flex justify-center">
+          <div className="pt-5 lg:pt-0 flex-1 flex justify-center">
             <Image
-              src="/hero-illustration.png" // ← Put your cartoon illustration here
+              src="/hero-illustration.png"
               alt="Illustration of Danny coding at desk"
               className="max-w-full h-auto rounded-xl shadow-lg object-contain"
               width={500}
@@ -52,10 +43,9 @@ export default function Home() {
             />
           </div>
         </section>
-
         {/* About Me */}
-        <section id="about" className="py-20 border-t border-zinc-200">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+        <section id="about" className="py-20 border-zinc-200">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h3 className="text-3xl font-bold text-zinc-900">About Me</h3>
               <p className="text-zinc-700 leading-relaxed">
