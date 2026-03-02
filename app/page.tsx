@@ -18,7 +18,7 @@ export default function Home() {
               Hello! My <span className="font-light font-[merriweather] lg:italic non-italic">name is </span> <span className="font-medium">Danny</span>.
             </h1>
             <p className="text-lg lg:text-xl text-zinc-800 font-[raleway] max-w-xl mx-auto lg:mx-0">
-              I am a current <b>junior</b> in high school, attending <i>Pembroke Pines Charter High School.</i> With my <b>fervent</b> love for code, I build <u className='decoration-wavy'>clean</u>, <u>performant</u> <b>experiences</b> with modern tools like <i className='font-[merriweather] font-light'>Next.js, TypeScript, and Tailwind.</i>
+              I am a current <b>junior</b> in high school, attending <i>Pembroke Pines Charter High School.</i> With my <b>fervent</b> love for code, I build <u className=' underline-offset-6'>clean</u>, <u className='underline-offset-4 decoration-wavy'>performant</u> <b>experiences</b> with modern tools like <i className='font-[merriweather] font-light'>Next.js, TypeScript, and Tailwind.</i>
             </p>
             <div className="pt-2 lg:pt-5">
               <Button
@@ -69,7 +69,7 @@ export default function Home() {
           <div className="grid lg:grid-cols-1 gap-12 items-center">
             <div className="space-y-4">
               <h6 className="text-3xl text-zinc-700 leading-relaxed font-[raleway]">
-                <span className='font-[merriweather]'>Stress</span> makes me feel <i className='font-medium'>alive</i>
+                <span className='font-[merriweather] underline underline-offset-3 decoration-wavy'>Stress</span> makes me feel <i className='font-medium'>alive</i>
               </h6>
             </div>
             </div>
