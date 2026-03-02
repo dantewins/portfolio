@@ -57,8 +57,8 @@ export default function Home() {
               className="relative w-full overflow-hidden rounded-lg cursor-pointer bg-gray-300 h-[350px] md:h-[400px] lg:h-[500px] transition-all ease-in-out duration-300 group has-[:hover]:scale-103 pointer-events-none mt-4 md:mt-6 lg:mt-8 hover:opacity-95"
             >
               <div className="absolute inset-0 flex items-center justify-center bg-black/45">
-                <button className="p-4 text-white bg-white/20 rounded-full backdrop-blur-sm hover:bg-white/30 focus:outline-none hover:cursor-pointer transition-all ease-in-out duration-300 hover:p-[1.2rem] pointer-events-auto">
-                  <Play className="w-8 h-8 group-hover:w-9 group-hover:h-9 transition-all ease-in-out duration-300" fill="white" strokeWidth={0}  />
+                <button className="p-4 lg:p-5 text-white bg-white/20 rounded-full backdrop-blur-sm hover:bg-white/30 focus:outline-none hover:cursor-pointer transition-all ease-in-out duration-300 hover:p-5 lg:hover:p-6 pointer-events-auto">
+                  <Play className="w-8 h-8 lg:w-9 lg:h-9 group-hover:h-9 group-hover:w-9 lg:group-hover:w-10 lg:group-hover:h-10 transition-all ease-in-out duration-300" fill="white" strokeWidth={0}  />
                 </button>
               </div>
             </div>
