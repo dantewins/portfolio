@@ -102,7 +102,7 @@ export default function Home() {
                   </div>
                   <div className="relative">
                     <Image
-                      src={`/projects/swordle2.png`} // Your dark mode screenshot or illustration
+                      src={`/projects/swordle/2.png`} // Your dark mode screenshot or illustration
                       alt={`${project.title} feature 2`}
                       width={400}
                       height={400}
