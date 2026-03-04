@@ -90,7 +90,7 @@ export default function Home() {
                     <span className="text-lg md:text-xl font-[poppins] font-normal mt-2 tracking-tight col-span-4">{project.desc}</span>
                   </div>
                 </CardHeader>
-                <CardContent className="mx-2 mt-2 grid grid-cols-1 md:grid-cols-3 gap-1">
+                <CardContent className="mx-2 mt-2 grid grid-cols-1 md:grid-cols-3 gap-0">
                   <div className="relative col-span-2">
                     <Image
                       src={`/projects/swordle/1.png`}
@@ -106,7 +106,7 @@ export default function Home() {
                       alt={`${project.title} feature 2`}
                       width={400}
                       height={400}
-                      className="mt-1 w-full h-full rounded-lg object-cover shadow-sm transform rotate-2 hidden md:block border-4 border-white"
+                      className="w-full h-full rounded-lg object-cover shadow-sm transform rotate-2 hidden md:block border-4 border-white"
                     />
                   </div>
                 </CardContent>
