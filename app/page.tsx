@@ -1,8 +1,31 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { ArrowRight, Play, Swords, Tornado, Rabbit } from 'lucide-react';
+import { Card, CardHeader } from '@/components/ui/card';
+import { ArrowRight, Play } from 'lucide-react';
+
+const projects = [
+  {
+    title: "Swordle",
+    desc: "A Wordle-style SAT vocab game with solo play and real-time multiplayer, built with Next.js and Supabase.",
+    repo: "https://github.com/dantewins/swordle",
+  },
+  {
+    title: "Huracan",
+    desc: "An AI post-hurricane inspection app that analyzes damage photos and provides repair guidance with location-based context.",
+    repo: "https://github.com/dantewins/huracan",
+  },
+  {
+    title: "Bunni",
+    desc: "A Notion-powered planner that syncs assignments into a clean weekly/monthly calendar using Next.js and Supabase.",
+    repo: "https://github.com/dantewins/bunni",
+  },
+  {
+    title: "Expounder",
+    desc: "An AI dashboard that explores GitHub repos and generates polished READMEs, with optional Dropbox export.",
+    repo: "https://github.com/dantewins/expounder",
+  },
+];
 
 export default function Home() {
   return (
@@ -71,47 +94,30 @@ export default function Home() {
             </div>
           </div>
           <div className="mt-2 md:mt-4 lg:mt-6 grid md:grid-cols-1 gap-4">
-            {[
-              { title: "Swordle", desc: "A full-stack app built with Next.js, Prisma, and Tailwind. Features auth, real-time updates, and clean UI.", icon: Swords },
-              { title: "Huracan", desc: "Interactive dashboard using React, Chart.js, and Supabase. Focused on data visualization and UX.", icon: Tornado },
-              { title: "Bunni", desc: "Personal finance tracker with TypeScript, Zustand, and responsive design. Mobile-first approach.", icon: Rabbit },
-            ].map((project, i) => (
-              <Card key={i} className="group overflow-hidden border-none shadow-none transition bg-zinc-100 rounded-xl pb-0">
-                <CardHeader className="text-zinc-900 mt-2 sm:my-2 ml-0 sm:ml-1">
-                  <div className="flex items-center justify-between">
-                    <span className="text-2xl md:text-3xl font-medium flex items-center font-[poppins] tracking-tighter">
-                      {project.title}
-                    </span>
-                    <ArrowRight
-                        className="transition-transform duration-1000 ease-in-out transform hover:rotate-[360deg] hover:cursor-pointer mr-2 md:h-[2.1rem] md:w-[2.1rem] h-[1.8rem] w-[1.8rem]"
-                      />
-                  </div>
-                  <div className='grid grid-cols-7'>
-                    <span className="text-lg md:text-xl font-[poppins] font-normal mt-2 tracking-tight col-span-4">{project.desc}</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="mx-2 mt-2 grid grid-cols-1 md:grid-cols-3 gap-0">
-                  <div className="relative col-span-2">
-                    <Image
-                      src={`/projects/swordle/1.png`}
-                      alt={`${project.title} feature 1`}
-                      width={400}
-                      height={400}
-                      className="w-full h-full mt-4 rounded-lg object-cover border-4 border-white transform -rotate-1 hover:-rotate-5 transition ease-in-out duration-300 hover:scale-101"
-                    />
-                  </div>
-                  <div className="relative">
-                    <Image
-                      src={`/projects/swordle/2.png`} // Your dark mode screenshot or illustration
-                      alt={`${project.title} feature 2`}
-                      width={400}
-                      height={400}
-                      className="w-full h-full rounded-lg object-cover shadow-sm transform rotate-2 hidden md:block border-4 border-white"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+            {projects.map((project, i) => {
+              return (
+                <Card
+                  key={i}
+                  className="group overflow-hidden border-none shadow-none transition bg-zinc-100 rounded-xl hover:cursor-pointer"
+                >
+                  <Link href={project.repo} target="_blank" rel="noopener noreferrer">
+                    <CardHeader className="text-zinc-900 mt-2 sm:my-2 ml-0 sm:ml-1">
+                      <div className="flex items-center justify-between">
+                        <span className="text-2xl md:text-3xl font-medium flex items-center font-[poppins] tracking-tighter">
+                          {project.title}
+                        </span>
+                        <ArrowRight className="transition-transform duration-1000 ease-in-out transform group-hover:rotate-[360deg] mr-2 md:h-[2.1rem] md:w-[2.1rem] h-[1.8rem] w-[1.8rem]" />
+                      </div>
+                      <div className="grid grid-cols-7">
+                        <span className="text-lg md:text-xl font-[poppins] font-normal mt-1 md:mt-2 text-zinc-500 tracking-tight col-span-6 md:col-span-5">
+                          {project.desc}
+                        </span>
+                      </div>
+                    </CardHeader>
+                  </Link>
+                </Card>
+              );
+            })}
           </div>
         </section>
       </main>
