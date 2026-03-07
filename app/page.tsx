@@ -1,8 +1,11 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader } from '@/components/ui/card';
 import { ArrowRight, Play } from 'lucide-react';
+import { useRef } from 'react';
 
 const projects = [
   {
@@ -27,7 +30,9 @@ const projects = [
   },
 ];
 
-export default function Home() {
+export default function Portfolio() {
+  const caseStudies = useRef<HTMLElement>(null);
+
   return (
     <div className="min-h-screen antialiased">
       <main className="mx-auto max-w-5xl px-6">
@@ -43,7 +48,8 @@ export default function Home() {
             <div className="pt-2 lg:pt-5">
               <Button
                 variant="default"
-                className="group text-md sm:text-lg h-[42] transition ease-in-out duration-500 hover:cursor-pointer"
+                className="group text-md sm:text-lg h-[42px] transition ease-in-out duration-500 hover:cursor-pointer"
+                onClick={() => caseStudies.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
               >
                 All case studies{" "}
                 <ArrowRight
@@ -85,8 +91,8 @@ export default function Home() {
         </section>
 
         {/* Projects */}
-        <section id="projects" className="py-20 lg:py-32">
-          <div className="grid lg:grid-cols-1 gap-12 items-center">
+        <section id="projects" className="py-20 lg:py-32" ref={caseStudies}>
+          <div className="items-center">
             <div className="space-y-4">
               <h6 className="text-2xl sm:text-3xl text-zinc-700 leading-relaxed font-[raleway]">
                 <span className='font-[merriweather] underline underline-offset-3 decoration-wavy'>Stress</span> makes me feel <i className='font-medium'>alive</i>
@@ -98,18 +104,18 @@ export default function Home() {
               return (
                 <Card
                   key={i}
-                  className="group overflow-hidden border-none shadow-none transition bg-zinc-100 rounded-xl hover:cursor-pointer"
+                  className="group overflow-hidden border-none shadow-none transition bg-zinc-100 rounded-xl hover:cursor-pointer hover:scale-102 transition ease-in-out duration-300 sm:p-6 px-4 py-5"
                 >
                   <Link href={project.repo} target="_blank" rel="noopener noreferrer">
-                    <CardHeader className="text-zinc-900 mt-2 sm:my-2 ml-0 sm:ml-1">
+                    <CardHeader className="text-zinc-900 mt-0 sm:my-2 ml-0 sm:ml-1 sm:gap-2 sm:px-0 px-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-2xl md:text-3xl font-medium flex items-center font-[poppins] tracking-tighter">
+                        <span className="text-xl sm:text-2xl md:text-3xl font-medium flex items-center font-[poppins] tracking-tighter">
                           {project.title}
                         </span>
-                        <ArrowRight className="transition-transform duration-1000 ease-in-out transform group-hover:rotate-[360deg] mr-2 md:h-[2.1rem] md:w-[2.1rem] h-[1.8rem] w-[1.8rem]" />
+                        <ArrowRight className="transition-transform duration-1000 ease-in-out transform group-hover:rotate-[360deg] mr-2 md:h-[2.1rem] md:w-[2.1rem] sm:h-[1.8rem] sm:w-[1.8rem] h-[1.6rem] w-[1.6rem]" />
                       </div>
                       <div className="grid grid-cols-7">
-                        <span className="text-lg md:text-xl font-[poppins] font-normal mt-1 md:mt-2 text-zinc-500 tracking-tight col-span-6 md:col-span-5">
+                        <span className="text-sm sm:text-lg md:text-xl font-[poppins] font-normal mt-1 md:mt-2 text-zinc-500 tracking-tight col-span-5 sm:col-span-6 md:col-span-5">
                           {project.desc}
                         </span>
                       </div>
@@ -118,6 +124,67 @@ export default function Home() {
                 </Card>
               );
             })}
+          </div>
+        </section>
+
+        {/* Resume */}
+        <section id="resume" className="pt-20 pb-8 lg:pt-32 lg:pb-20">
+          <div className="flex flex-col items-center gap-8 text-center lg:flex-row lg:items-start lg:justify-between lg:text-left">
+            <div className="space-y-3">
+              <p className="text-3xl sm:text-4xl lg:text-5xl tracking-tight text-zinc-900 font-[poppins]">
+                Thanks for visiting.
+              </p>
+
+              <p className="text-zinc-600 font-[raleway] text-base sm:text-lg">
+                Student developer based in Florida
+              </p>
+            </div>
+
+            <div className="flex flex-col items-center gap-5 lg:items-end">
+              <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:justify-center lg:justify-end">
+                <Button
+                  asChild
+                  className="group h-9 sm:h-10 px-5 text-base shadow-none font-[merriweather] w-full sm:w-auto"
+                >
+                  <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                    View resume
+                  </Link>
+                </Button>
+
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-9 sm:h-10 px-5 text-base shadow-none font-[merriweather] w-full sm:w-auto"
+                >
+                  <Link href="tel:+17542016279">Contact</Link>
+                </Button>
+              </div>
+
+              <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm sm:text-base text-zinc-500 font-[raleway] lg:justify-end">
+                <Link
+                  href="https://github.com/dantewins"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-zinc-900 transition-colors"
+                >
+                  GitHub
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/danny-kim-079627334"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-zinc-900 transition-colors"
+                >
+                  LinkedIn
+                </Link>
+                <Link
+                  href="mailto:kimdanny0603@gmail.com"
+                  className="hover:text-zinc-900 transition-colors"
+                >
+                  Email
+                </Link>
+              </div>
+            </div>
           </div>
         </section>
       </main>
